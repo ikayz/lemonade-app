@@ -115,8 +115,10 @@ class MainActivity : AppCompatActivity() {
         when (lemonadeState) {
             SELECT -> {
                 lemonadeState = SQUEEZE
-
+                lemonSize = lemonTree.pick()
+                squeezeCount = 0
             }
+
         }
     }
 
