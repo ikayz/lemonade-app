@@ -118,7 +118,15 @@ class MainActivity : AppCompatActivity() {
                 lemonSize = lemonTree.pick()
                 squeezeCount = 0
             }
-
+            SQUEEZE -> {
+                squeezeCount + 1
+                lemonSize - 1
+                lemonadeState = if (lemonSize == 0) {
+                    DRINK
+                } else {
+                    SQUEEZE
+                }
+            }
         }
     }
 
