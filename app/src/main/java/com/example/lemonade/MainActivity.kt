@@ -119,15 +119,23 @@ class MainActivity : AppCompatActivity() {
                 squeezeCount = 0
             }
             SQUEEZE -> {
-                squeezeCount + 1
-                lemonSize - 1
+                squeezeCount++
+                lemonSize--
                 lemonadeState = if (lemonSize == 0) {
                     DRINK
                 } else {
                     SQUEEZE
                 }
             }
+            DRINK -> {
+                lemonadeState = RESTART
+                lemonSize = -1
+            }
+            RESTART -> {
+                lemonadeState = SELECT
+            }
         }
+        setViewElements()
     }
 
     /**
